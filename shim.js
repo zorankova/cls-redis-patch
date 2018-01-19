@@ -29,10 +29,10 @@ module.exports = function patchRedis(ns) {
   var proto = redis && redis.RedisClient && redis.RedisClient.prototype;
   shimmer.wrap(proto, 'send_command', function (send_command) {
     return function wrapped() {
-      var args     = slice(arguments);
-      var last     = args.length - 1;
+      var args = slice(arguments);
+      var last = args.length - 1;
       var callback = args[last];
-      var tail     = callback;
+      var tail = callback;
 
       if (typeof callback === 'function') {
         args[last] = ns.bind(callback);
@@ -43,6 +43,15 @@ module.exports = function patchRedis(ns) {
       }
 
       return send_command.apply(this, args);
+    };
+  });
+  shimmer.wrap(proto, 'internal_send_command', function (internal_send_command) {
+    return function wrapped(command_obj) {
+      if (command_obj && typeof command_obj.callback === 'function') {
+        command_obj.callback = ns.bind(command_obj.callback);
+      }
+
+      return internal_send_command.call(this, command_obj);
     };
   });
 };

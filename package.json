@@ -1,36 +1,32 @@
 {
-  "name": "cls-redis",
-  "version": "1.0.3",
-  "description": "Make continuation-local storage play nice with node-redis.",
+  "name": "cls-redis-patch",
+  "version": "0.0.1",
+  "description": "Make continuation-local-storage and cls-hooked play nice with redis.",
   "main": "shim.js",
   "scripts": {
     "test": "tap test/*.tap.js"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/othiym23/cls-redis.git"
+    "url": "https://github.com/abhiche/cls-redis-patch.git"
   },
   "keywords": [
     "continuation-local-storage",
-    "node-redis",
     "redis",
-    "shim",
-    "glue",
-    "baling-wire",
-    "wow"
+    "shim"
   ],
-  "author": "Forrest L Norvell <ogd@aoaioxxysz.net>",
+  "author": "Abhilash Chelankara",
   "license": "BSD-2-Clause",
   "bugs": {
-    "url": "https://github.com/othiym23/cls-redis/issues"
+    "url": "https://github.com/abhiche/cls-redis-patch/issues"
   },
   "peerDependencies": {
     "continuation-local-storage": "^3.0.0",
-    "redis": ">=0.10.2 <1.0.0"
+    "redis": ">=0.10.2 <=2.6.0"
   },
   "devDependencies": {
     "tap": "~0.4.4",
-    "redis": ">=0.10.2 <1.0.0",
+    "redis": ">=0.10.2 <2.6.0",
     "continuation-local-storage": "^3.0.0"
   },
   "dependencies": {
