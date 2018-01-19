@@ -2,7 +2,7 @@
 
 Forked from [`cls-redis`](https://github.com/othiym23/cls-redis)
 
-[`redis`](github.com/NodeRedis/node_redis) works great, unless
+[`redis`](https://github.com/NodeRedis/node_redis) works great, unless
 you're using cls or cls-hooked, which wants to provide consistent access to stored values
 across entire asynchronous call chains. You could use `ns.bind` to put all your
 Redis callbacks on the correct continuation chain, but that breaks down if you
@@ -35,4 +35,4 @@ The tests assume a Redis server is up and running on localhost on the standard
 port.
 
 ### TODO
-Support latest version of [`cls-redis`](https://github.com/othiym23/cls-redis)
+Support latest version of [`redis`](https://github.com/NodeRedis/node_redis)
