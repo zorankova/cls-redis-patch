@@ -1,6 +1,6 @@
 {
   "name": "cls-redis-patch",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Make continuation-local-storage and cls-hooked play nice with redis.",
   "main": "shim.js",
   "scripts": {
@@ -22,7 +22,7 @@
   },
   "peerDependencies": {
     "continuation-local-storage": "^3.0.0",
-    "redis": ">=0.10.2 <=2.6.0"
+    "redis": ">=0.10.2 <=2.8.0"
   },
   "devDependencies": {
     "tap": "~0.4.4",
